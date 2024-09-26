@@ -37,3 +37,33 @@ int main()
 //   5. 转到“项目”>“添加新项”以创建新的代码文件，或转到“项目”>“添加现有项”以将现有代码文件添加到项目
 //   6. 将来，若要再次打开此项目，请转到“文件”>“打开”>“项目”并选择 .sln 文件
 */
+
+#include <iostream>
+#include <cstdio>
+#include <ctime>
+int main() {
+    //time test
+    clock_t start, end;
+    start = clock();
+    std::ios::sync_with_stdio(false);//no sync
+    std::cin.tie(NULL); 
+    std::cout.tie(NULL);
+    bool way = false;
+    for (int i=0; i < 100; i++) {
+        if (way) {
+            printf_s("%d\n",i);
+        }
+        else {
+            std::cout << i << "\n";
+            //std::cout.put(i)<<"\n";
+        }
+    }
+    end = clock();
+    if (way) {
+        printf_s("%d", end - start);
+    }
+    else {
+        std::cout << end - start;
+    }
+    return 0;
+}
